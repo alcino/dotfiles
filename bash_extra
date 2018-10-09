@@ -1,5 +1,6 @@
 alias vim=nvim
 VISUAL=nvim
+MATPLOTLIBRC=~/dotfiles/matplotlibrc
 eval "$(dircolors ~/.dir_colors)"
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
