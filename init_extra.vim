@@ -48,6 +48,8 @@ set undofile
 
 noremap <C-a> <Home>
 noremap <C-e> <End>
+noremap! <C-a> <Home>
+noremap! <C-e> <End>
 
 set termguicolors
 colorscheme NeoSolarized
