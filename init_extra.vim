@@ -6,9 +6,9 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'davidhalter/jedi-vim'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'iCyMind/NeoSolarized'
+Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'kiryph/vim-vinegar'
 Plug 'mbbill/undotree'
 Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
@@ -51,6 +51,8 @@ noremap <C-e> <End>
 
 set termguicolors
 colorscheme NeoSolarized
+
+let g:filebeagle_show_hidden=1
 
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
