@@ -51,6 +51,7 @@ noremap! <C-a> <Home>
 noremap! <C-e> <End>
 
 set termguicolors
+set background=light
 colorscheme NeoSolarized
 
 let g:filebeagle_show_hidden=1
