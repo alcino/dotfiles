@@ -6,7 +6,6 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'iCyMind/NeoSolarized'
 Plug 'jeetsukumaran/vim-filebeagle'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -56,3 +55,5 @@ let g:airline#extensions#tabline#enabled=1
 nnoremap <F5> :UndotreeToggle<cr>
 
 nnoremap <C-T> :FZF<CR>
+
+let g:coc_global_extensions=['coc-clangd', 'coc-cmake', 'coc-highlight', 'coc-json', 'coc-lists', 'coc-pyright', 'coc-sh', 'coc-snippets', 'coc-sql', 'coc-tabnine', 'coc-texlab', 'coc-xml']
