@@ -28,6 +28,10 @@
         "defaults":
         {
             // Put settings here that you want to apply to all profiles.
+                "colorScheme": "Solarized Light Fixed",
+				"fontFace": "Fira Code",
+                "cursorShape" : "filledBox",
+			"bellStyle": "none"
         },
         "list":
         [
@@ -50,9 +54,6 @@
                 "hidden": false,
                 "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl",
-				"colorScheme": "Solarized Light Fixed",
-				"fontFace": "Fira Code",
-                "cursorShape" : "filledBox",
 				"startingDirectory": "\\\\wsl$\\Ubuntu\\home\\paulo"
             },
             {
