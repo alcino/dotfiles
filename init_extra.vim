@@ -6,6 +6,8 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'iCyMind/NeoSolarized'
 Plug 'jeetsukumaran/vim-filebeagle'
+Plug 'jpalardy/vim-slime', { 'for': 'python' }
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -23,6 +25,8 @@ Plug 'tpope/vim-speeddating'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
+
+let g:coc_global_extensions=['coc-clangd', 'coc-cmake', 'coc-highlight', 'coc-json', 'coc-lists', 'coc-pyright', 'coc-sh', 'coc-snippets', 'coc-sql', 'coc-tabnine', 'coc-texlab', 'coc-xml']
 
 set hidden
 set ignorecase
@@ -52,8 +56,21 @@ let g:filebeagle_show_hidden=1
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 
-nnoremap <F5> :UndotreeToggle<cr>
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+
+" map <F5> to save and run script
+nnoremap <F5> :w<CR>:IPythonCellRun<CR>
+inoremap <F5> <C-o>:w<CR><C-o>:IPythonCellRun<CR>
+
+" map <F6> to evaluate current cell without saving
+nnoremap <F6> :IPythonCellExecuteCell<CR>
+inoremap <F6> <C-o>:IPythonCellExecuteCell<CR>
+
+" map <F7> to evaluate current cell and jump to next cell without saving
+nnoremap <F7> :IPythonCellExecuteCellJump<CR>
+inoremap <F7> <C-o>:IPythonCellExecuteCellJump<CR>
+
+nnoremap <F9> :UndotreeToggle<cr>
 
 nnoremap <C-T> :FZF<CR>
-
-let g:coc_global_extensions=['coc-clangd', 'coc-cmake', 'coc-highlight', 'coc-json', 'coc-lists', 'coc-pyright', 'coc-sh', 'coc-snippets', 'coc-sql', 'coc-tabnine', 'coc-texlab', 'coc-xml']
