@@ -2,15 +2,17 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
+Plug 'brentyi/isort.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'iCyMind/NeoSolarized'
 Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'jpalardy/vim-slime', { 'for': 'python' }
-Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'psf/black', {'branch': 'stable'}
 Plug 'raimondi/delimitmate'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -59,6 +61,8 @@ let g:airline#extensions#tabline#enabled=1
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 
+let g:isort_vim_options = '--profile black'
+
 " map <F5> to save and run script
 nnoremap <F5> :w<CR>:IPythonCellRun<CR>
 inoremap <F5> <C-o>:w<CR><C-o>:IPythonCellRun<CR>
@@ -71,6 +75,7 @@ inoremap <F6> <C-o>:IPythonCellExecuteCell<CR>
 nnoremap <F7> :IPythonCellExecuteCellJump<CR>
 inoremap <F7> <C-o>:IPythonCellExecuteCellJump<CR>
 
-nnoremap <F9> :UndotreeToggle<cr>
+nnoremap <F9> :UndotreeToggle<CR>
+nnoremap <F10> :Black<CR>:Isort<CR>
 
 nnoremap <C-T> :FZF<CR>

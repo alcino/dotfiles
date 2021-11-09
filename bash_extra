@@ -1,4 +1,5 @@
 alias vim=nvim
+alias ll='ls -lah'
 VISUAL=nvim
 MATPLOTLIBRC=~/dotfiles/matplotlibrc
 eval "$(dircolors ~/.dir_colors)"
